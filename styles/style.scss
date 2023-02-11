@@ -26,13 +26,13 @@ header {
   right: 0px;
   z-index: 10;
   background-color: $bgColor;
-  border-bottom: 1px solid $bgColorBorder;
   .navDiv {
     display: flex;
     justify-content: space-between;
     height: 40px;
     width: 100%;
     padding: 8px 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     .leftNav {
       display: flex;
       align-items: center;
@@ -46,7 +46,7 @@ header {
       align-items: center;
       a {
         text-decoration: none;
-        font-size: 14px;
+        font-size: 1rem;
         font-weight: bold;
         color: black;
         margin: 0px 25px;
@@ -63,64 +63,132 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  h1 {
-    font-weight: 400;
+  background-color: white;
+  .hero-Container {
+    display: flex;
+    flex-direction: column;
+    background-color: $bgColor;
+    padding: 1.5rem 15px;
+    border-radius: 3px;
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background-color: white;
+      border: 1px solid gray;
+    }
+    p {
+      font-size: 1.5em;
+      background-color: white;
+      border: 1px solid gray;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      color: black;
+    }
+    button {
+      background-color: $bgColor;
+      border: 1px solid black;
+      padding: 5px 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      width: 6rem;
+      align-self: center;
+    }
+    button:hover {
+      background-color: $bgColorHover;
+    }
   }
 }
 
 .main {
-  margin-top: 65px;
-  #About-Section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0px 50px;
-  }
   #Project-Section {
-    background-color: black;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 2rem;
     height: 100vh;
-
-    h1 {
-      color: white;
-      margin-bottom: 15px;
+    .Project-Section-Container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .Projext-Section-Tile {
+        h1 {
+          margin: 0;
+          color: black;
+          margin-bottom: 15px;
+          align-self: flex-start;
+        }
+      }
+    }
+    .Project-Main-Container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .Project-Row {
+        display: flex;
+        flex-direction: row;
+        .Project-Holder {
+          /* background-color: $bgColor; */
+          border: 1px solid black;
+          width: 500px;
+          height: 200px;
+          padding: 1rem 0.8rem;
+          margin: 1rem 1rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
     }
   }
-
   #About-Section {
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: white;
+    .About-Section-Container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .Tools-Section {
+        text-align: center;
+      }
+    }
   }
   #Contact-Section {
     background-color: black;
+    height: 60vh;
     padding: 85px 0px;
-    display: grid;
-    column-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    align-content: center;
-    justify-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
     .contact-left-Sec {
       width: 500px;
       align-self: flex-start;
+      margin: 0px 20px;
       h1,
       p {
         color: white;
         margin-bottom: 25px;
+        width: 100%;
       }
     }
     .contact-right-Sec {
       width: 500px;
+      margin: 0px 20px;
       form {
         display: flex;
         flex-direction: column;
         background-color: $bgColor;
         padding: 20px 15px;
         border-radius: 3px;
-        height: 100%;
+        width: 100%;
         legend {
           font-weight: bold;
           margin-bottom: 20px;
@@ -130,7 +198,7 @@ header {
           border: 1px solid gray;
           margin: 10px 0;
           padding: 15px;
-          font-size: 14px;
+          font-size: 0.9rem;
           background-color: white;
         }
         input:focus,
@@ -142,11 +210,11 @@ header {
           background-color: $bgColor;
           border: 1px solid black;
           padding: 5px 15px;
-          font-size: 16px;
+          font-size: 1rem;
           font-weight: bold;
-          cursor: pointer;
           width: 100px;
           align-self: center;
+          cursor: pointer;
         }
         button:hover {
           background-color: $bgColorHover;
@@ -155,14 +223,24 @@ header {
     }
   }
 }
+
 footer {
   text-align: center;
-  background-color: $bgColor;
-  border-top: 1px solid $bgColorBorder;
+  background-color: black;
+  /* border-top: 1px solid $bgColorBorder; */
+  border-top: 1px solid white;
   padding: 15px;
   p {
     font-size: 12px;
-    color: black;
+    color: white;
     margin: 0px 5px;
   }
 }
+
+/*
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+*/
