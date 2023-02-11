@@ -1,0 +1,168 @@
+$bgColor: rgba(238, 238, 238, 255);
+$bgColorBorder: rgb(70, 130, 180);
+$bgColorHover: rgba(248, 248, 248, 255);
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif, monospace;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+  background-color: $bgColor;
+  border-bottom: 1px solid $bgColorBorder;
+  .navDiv {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    padding: 8px 30px;
+    .leftNav {
+      display: flex;
+      align-items: center;
+      a:hover {
+        background-color: $bgColorHover;
+      }
+    }
+    .rightNav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        margin: 0px 25px;
+      }
+      a:hover {
+        background-color: $bgColorHover;
+      }
+    }
+  }
+}
+
+#Hero-Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  h1 {
+    font-weight: 400;
+  }
+}
+
+.main {
+  margin-top: 65px;
+  #About-Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0px 50px;
+  }
+  #Project-Section {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    h1 {
+      color: white;
+      margin-bottom: 15px;
+    }
+  }
+
+  #About-Section {
+    background-color: white;
+    height: 100vh;
+  }
+  #Contact-Section {
+    background-color: black;
+    padding: 85px 0px;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-content: center;
+    justify-items: center;
+    align-items: flex-start;
+    .contact-left-Sec {
+      width: 500px;
+      align-self: flex-start;
+      h1,
+      p {
+        color: white;
+        margin-bottom: 25px;
+      }
+    }
+    .contact-right-Sec {
+      width: 500px;
+      form {
+        display: flex;
+        flex-direction: column;
+        background-color: $bgColor;
+        padding: 20px 15px;
+        border-radius: 3px;
+        height: 100%;
+        legend {
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        input,
+        textarea {
+          border: 1px solid gray;
+          margin: 10px 0;
+          padding: 15px;
+          font-size: 14px;
+          background-color: white;
+        }
+        input:focus,
+        textarea:focus {
+          outline: 1px solid blue;
+        }
+        button {
+          margin-top: 20px;
+          background-color: $bgColor;
+          border: 1px solid black;
+          padding: 5px 15px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          width: 100px;
+          align-self: center;
+        }
+        button:hover {
+          background-color: $bgColorHover;
+        }
+      }
+    }
+  }
+}
+footer {
+  text-align: center;
+  background-color: $bgColor;
+  border-top: 1px solid $bgColorBorder;
+  padding: 15px;
+  p {
+    font-size: 12px;
+    color: black;
+    margin: 0px 5px;
+  }
+}
