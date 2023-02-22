@@ -13,61 +13,119 @@ html {
 body {
   font-family: "Montserrat", sans-serif, monospace;
 }
+@media (max-width: 375px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 
-header {
+.navDiv {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background-color: $bgColor;
+  padding: 8px 30px;
   position: fixed;
   top: 0;
   left: 0px;
   right: 0px;
   z-index: 10;
-  width: 100vw;
-  .navDiv {
+  height: 40px;
+  width: 100%;
+  .leftNav {
     display: flex;
-    justify-content: space-between;
-    background-color: $bgColor;
-    height: 40px;
-    width: 100%;
-    padding: 8px 30px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    .leftNav {
-      display: flex;
-      align-items: center;
-      a {
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: bold;
-        color: black;
-        margin: 0px 25px;
-        @media (max-width: 375px) {
-          font-size: 0.8rem;
-        }
-      }
-      a:hover {
-        background-color: $bgColorHover;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      color: black;
+      margin: 0px 25px;
+      @media (max-width: 375px) {
+        font-size: 0.8rem;
       }
     }
-    .rightNav {
+    a:hover {
+      background-color: $bgColorHover;
+    }
+  }
+  .navLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    @media (max-width: 375px) {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      height: 96vh;
+      width: 50%;
+      background-color: $bgColor;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      a {
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: bold;
-        color: black;
-        margin: 0px 25px;
-        @media (max-width: 375px) {
-          font-size: 0.8rem;
-          margin: 0rem 0.6rem;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
+    li {
+      list-style-type: none;
+      @media (max-width: 375px) {
+        opacity: 0;
+      }
+      @keyframes navlinksFade {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0px);
         }
       }
-      a:hover {
-        background-color: $bgColorHover;
+    }
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      color: black;
+      margin: 0px 25px;
+      @media (max-width: 375px) {
+        font-size: 0.8rem;
+        margin: 0rem 0.6rem;
       }
     }
+    a:hover {
+      background-color: $bgColorHover;
+    }
+  }
+  .navActive {
+    transform: translateX(0%);
+  }
+  .burger {
+    display: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (max-width: 375px) {
+      display: block;
+    }
+    div {
+      width: 20px;
+      background-color: black;
+      height: 2px;
+      margin: 5px;
+    }
+  }
+  .burgerAnimation .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: gray;
+  }
+  .burgerAnimation .line2 {
+    opacity: 0;
+  }
+  .burgerAnimation .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: gray;
   }
 }
 
